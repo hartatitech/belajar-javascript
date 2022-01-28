@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructing</title>
+</head>
+
+<body>
+    <script>
+        // mengambil data di array
+        const names = ["Eko", "Kurniawan", "Khannedy"];
+        const firstName = names[0];
+        const middleName = names[1];
+        const lastName = names[2];
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+
+
+
+        // destructing array
+        const names2 = ["Eko", "Kurniawan", "Khannedy", "Budi", "Joko"];
+        const [firstName2, middleName2, lastName2, ...others] = names2; // others namanya bisa bebas
+        console.info(firstName2);
+        console.info(middleName2);
+        console.info(lastName2);
+        console.info(others);
+
+
+
+        // mengambil data di objek
+        const person3 = {
+            firstName3: "Eko",
+            lastName3: "Khannedy",
+            address: {
+                street: "Jalan Belum Ada",
+                city: "Jakarta",
+                country: "Indonesia"
+            },
+            hobby: "Game",
+            channel: "Programmer zaman now"
+        };
+        //const firstName3 = person3.firstName3;
+        //const lastName3 = person3.lastName3;
+
+
+        // destructing objek
+        const { firstName3, lastName3, address, ...others3 } = person3;
+        console.info(firstName3);
+        console.info(lastName3);
+        console.info(address);
+        console.info(others3);
+    </script>
+</body>
+
+</html>

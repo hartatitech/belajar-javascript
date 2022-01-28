@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optional Chaining</title>
+</head>
+
+<body>
+    <script>
+        let person = {};
+
+        // mengakses property nullish
+        //alert(person.address.country);
+
+        // pengecekan menggunakan if
+        let say;
+        if (person.address !== undefined && person.address !== null) {
+            say = person.address.country;
+        }
+        alert(say);
+
+        // kode menggunakan optional chaining
+        let person2 = {
+            address: {
+                country: "Indonesia"
+            }
+        };
+        alert(person2?.address?.country); // jika person2 ada, maka akses address, jika address ada, maka akses Country
+    </script>
+</body>
+
+</html>

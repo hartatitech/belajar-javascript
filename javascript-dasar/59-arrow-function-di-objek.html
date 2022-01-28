@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function di Object</title>
+</head>
+
+<body>
+    <script>
+        // arrow function di object method
+        const person = {
+            name: "Eko",
+            sayHello: (name) => {
+                console.info(`Hello ${person.name}`)
+                
+            }
+        };
+        person.sayHello("Budi");
+
+        // this di arrow function object
+        const person2 = {
+            name: "Eko",
+            sayHello: (name) => {
+                console.info(this); // window
+                console.info(`Hello ${name}, My name is ${this.name}`); //tidak bisa gunakan this di arrow function objek
+            }
+        };
+        person2.sayHello("Budi"); // Hello Budi, My name is
+    </script>
+</body>
+
+</html>

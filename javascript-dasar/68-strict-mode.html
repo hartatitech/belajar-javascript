@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strict Mode</title>
+</head>
+
+<body>
+    <script>
+        function useStrictMode() {
+            'use strict'; // biasanya diletakkan di baris awal file js, atau di awal function jika file html
+            const person = {
+                firstName: "Eko"
+            }
+
+            with (person) { // with dilarang
+                console.info(firstName);
+            }
+        }
+
+        useStrictMode();
+    </script>
+</body>
+
+</html>

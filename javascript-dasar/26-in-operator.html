@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // in berfungsi untuk mengecek apakah objek/array mengandung
+        // nilai/value tertentu
+        // contoh 1
+        const person = {
+            firstName: "Eko",
+            lastName: "Khannedy"
+        };
+        if ("firstName" in person) {
+            alert(`Hello ${person.firstName}`);
+        }
+
+        const result = "firstName" in person; // true
+        document.writeln(`<p>${result}</p>`);
+
+        // contoh 2
+        const orang = {
+            lastName: undefined
+        };
+        const resultOrang = "lastName" in person; // true
+        document.writeln(`<p>${resultOrang}</p>`);
+
+        // contoh 3
+        const name = [null, "Kurniawan", null];
+        const nameResult = 0 in name; //true
+        document.writeln(`<p>${nameResult}</p>`);
+    </script>
+</body>
+
+</html>

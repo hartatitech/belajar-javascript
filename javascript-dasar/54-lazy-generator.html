@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Generator</title>
+</head>
+
+<body>
+    <script>
+        // buat ganjil array : eager = tampilkan semua yield dulu, baru result
+        function buatGanjilArray(value) {
+            const result = [];
+            for (let i = 1; i <= value; i++) {
+                if (i % 2 === 1) {
+                    console.info(`Yield ${i}`);
+                    result.push(i);
+                }
+            }
+            return result;
+        }
+
+        // buatGanjil generator : lazy = tampilkan satu yield lalu satu i, dan diulangi terus
+        function* buatGanjil(value) {
+            for (let i = 1; i <= value; i++) {
+                if (i % 2 === 1) {
+                    console.info(`Perulangan ke ${i}`);
+                    yield i;
+                }
+            }
+        }
+
+        // pengecekan
+        const numbers = buatGanjilArray(10);
+        for (const number of numbers) {
+            console.info(number);
+        }
+
+        const angkaGanjil = buatGanjil(10);
+        console.info(angkaGanjil.next().value);
+        console.info(angkaGanjil.next().value);
+        console.info(angkaGanjil.next().value);
+
+        // function next() berfungsi utk menuju iterasi selanjutnya, sedangkan value berarti mengambil nilai valuenya
+    </script>
+</body>
+
+</html>

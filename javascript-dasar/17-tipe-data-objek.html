@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // tipe data objek adalah tipe data untuk data2 dalam array yang index nya string bukan angka
+
+        const orang = {};
+
+        // Menambah atau mengubah
+        orang["nama"] = "Hartati";
+        orang["alamat"] = "Kalimantan Tengah";
+        orang["umur"] = 21;
+
+        // Menghapus
+        delete orang["umur"];
+        console.table(orang);
+
+        const person = {
+            "nama lengkap": "Hartati",
+            alamat: "Kalimantan Tengah",
+            umur: 21
+        };
+        console.table(person);
+        console.info(`Nama Lengkap: ${person["nama lengkap"]}`);
+        console.info(`Alamat : ${person.alamat}`);
+        console.info(`Umur : ${person.umur}`);
+    </script>
+</body>
+
+</html>

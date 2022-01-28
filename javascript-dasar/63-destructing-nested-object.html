@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructing nested object</title>
+</head>
+
+<body>
+    <script>
+        // mengambil data di objek
+        const person = {
+            firstName: "Eko",
+            lastName: "Khannedy",
+            address: {
+                street: "Jalan Belum Ada",
+                city: "Jakarta",
+                country: "Indonesia"
+            },
+            hobby: "Game",
+            channel: "Programmer zaman now"
+        };
+
+        const { firstName, lastName, address: { country, city, street }, ...others } = person; 
+        // address tdk bisa diakses lagi
+        console.info(firstName);
+        console.info(lastName);
+        console.info(country);
+        console.info(city);
+        console.info(street);
+        console.info(others);
+    </script>
+</body>
+
+</html>
